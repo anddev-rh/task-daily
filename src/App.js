@@ -8,7 +8,8 @@ export function App() {
 
   
   return (
-    <div>
+    
+    <div className="grid h-screen bg-gray-800">
       
       <Lista/>
 

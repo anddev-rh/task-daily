@@ -6,10 +6,7 @@ class Lista extends React.Component {
   state = {
     data : [
       {
-        task: 'lavar '
-      },
-      {
-        task: 'planchar '
+        task: 'Tarea 1',
       },
     ]
   }
@@ -32,10 +29,16 @@ class Lista extends React.Component {
   addTask = () => {
     const newTask = document.getElementById('newTask')
     const task = newTask.value
-    console.log(newTask)
-    this.state.data.push({task})
-    this.setState({data: this.state.data})
-    newTask.value = ""
+    if (task == "") {
+      alert('ponle primero nombre a la tarea')
+    } else {
+      //console.log(newTask)
+      this.state.data.push({task})
+      this.setState({data: this.state.data})
+      newTask.value = ""
+    }
+
+
   }
   
   removeTask = (task) => {
@@ -49,13 +52,13 @@ class Lista extends React.Component {
 
   render(){
     return (
-      <div className="container-list">
-        <h1>Tareas</h1>
+      <div className=" flex flex-col gap-y-4 justify-self-center self-center w-80 container-list rounded bg-gray-50">
+        <h1 className="self-center text-xl font-bold">TAREAS</h1>
         <div className="container-task">
           <Tarea tasks={this.state.data} remove={this.removeTask} />
         </div>
-        <input onKeyUp={this.enterPressed.bind(this)} type="text" placeholder="new task" id="newTask" />
-        <button onClick={this.addTask}>Agregar</button>
+        <input className=" w-60 self-center h-7 outline-none" autoComplete="off" onKeyUp={this.enterPressed.bind(this)} type="text" placeholder="Nueva tarea" id="newTask" />
+        <button className="border-2 w-20 self-center mb-2" onClick={this.addTask}>Agregar</button>
       </div>
     )
   }

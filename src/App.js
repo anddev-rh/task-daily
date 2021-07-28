@@ -1,7 +1,8 @@
 //import logo from './logo.svg';
 //import './App.css';
 import React from 'react'
-import Lista from './components/Lista'
+import Day from './components/Day'
+import Home from './pages/Home'
 
 
 export function App() {
@@ -9,9 +10,9 @@ export function App() {
   
   return (
     
-    <div className="grid h-screen bg-gray-800">
+    <div className="h-screen bg-gray-800">
       
-      <Lista/>
+      <Home/>
 
     </div>
   );

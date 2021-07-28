@@ -1,6 +1,26 @@
+import { render } from '@testing-library/react'
 import React from 'react'
 
-class Tarea extends React.Component {
+
+function Task (props) {
+
+  return(
+    <p className=" border-2 mr-8" key={props.actualTask}>
+      <button 
+        className=" text-red-600 font-extrabold text-xl w-6 "
+        onClick={() => {props.remove(props.actualTask)}}>
+        -
+      </button>
+      {props.actualTask}      
+    </p>
+  );
+
+}
+
+
+
+
+/* class Tarea extends React.Component {
   
 
   
@@ -22,6 +42,6 @@ class Tarea extends React.Component {
     )
   }
 
-}
+} */
 
-export default Tarea
+export default Task

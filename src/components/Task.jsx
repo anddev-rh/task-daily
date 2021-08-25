@@ -5,13 +5,17 @@ import React from 'react'
 function Task (props) {
 
   return(
-    <p className=" border-2 mr-8" key={props.actualTask}>
+    <p className=" border-2 mr-8 flex justify-between" key={props.actualTask}>
       <button 
         className=" text-red-600 font-extrabold text-xl w-6 "
         onClick={() => {props.remove(props.actualTask)}}>
         -
       </button>
       {props.actualTask}      
+      <button 
+        className=" self-end"
+        onClick={() => {props.pass(props.actualTask)}}
+        > -> </button>
     </p>
   );
 

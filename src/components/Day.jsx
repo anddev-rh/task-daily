@@ -25,12 +25,16 @@ function Day (props) {
     setTasks([...tasks]);
   }
 
+  function passTask (task) {  
+    console.log(task)
+  }
+
   return (
     <div className=" flex flex-col gap-y-4 justify-self-center self-center w-80 container-list rounded bg-gray-50" key={props.dayName}>
       <h1 className="self-center text-xl font-bold">{props.dayName}</h1>
       <div className="container-task pl-8 min-h-300 flex flex-col gap-y-1 ">
         {tasks.map(task => 
-          <Task actualTask={task} remove={removeTask} />
+          <Task actualTask={task} remove={removeTask} pass={passTask} />
         )}
         {/* <Tarea tasks={this.state.data} remove={this.removeTask} /> */}
       </div>

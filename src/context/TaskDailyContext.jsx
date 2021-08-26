@@ -4,7 +4,7 @@ export const TaskDailyContext = createContext();
 
 const TaskDailyContextProvider = (props) => {
 
-  const [tasks, setTasks] = useState('tarea de prueba')
+  const [tasks, setTasks] = useState(['tarea de prueba'])
 
   function addTask () {
     const newTask = document.getElementById(`newTask${props.dayName}`);

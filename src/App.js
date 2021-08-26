@@ -3,18 +3,21 @@
 import React from 'react'
 import Day from './components/Day'
 import Home from './pages/Home'
-
+import TaskDailyContextProvider from './context/TaskDailyContext';
 
 export function App() {
 
   
   return (
     
-    <div className="h-screen bg-gray-800">
-      
-      <Home/>
+    <TaskDailyContextProvider>
+      <div className="h-screen bg-gray-800">
+        
+        <Home/>
 
-    </div>
+      </div>
+    </TaskDailyContextProvider>
+
   );
 }
 

@@ -13,9 +13,15 @@ const TaskDailyContextProvider = (props) => {
     newTask.value = '';
   };
 
+    function removeTask (task) {
+    const index = tasks.indexOf(task);
+    tasks.splice(index, 1);
+    setTasks([...tasks]);
+  }
+
 
   return(
-    <TaskDailyContext.Provider value = {{tasks, addTask}}>
+    <TaskDailyContext.Provider value = {{tasks, addTask, removeTask}}>
       {props.children}
     </TaskDailyContext.Provider>
   )

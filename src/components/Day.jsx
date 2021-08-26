@@ -7,6 +7,7 @@ import { TaskDailyContext} from '../context/TaskDailyContext'
 function Day (props) {
 
   const {tasks} = useContext(TaskDailyContext);
+  
 
   //const [tasks, setTasks] = useState(['tarea 1']);
   
